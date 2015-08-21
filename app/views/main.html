@@ -8,15 +8,15 @@
     <ui-gmap-search-box options="search.options" template="search.template" events="search.events" parentdiv="search.parent"></ui-gmap-search-box>
 </ui-gmap-google-map>
 
-<button class="btn btn-success save" ng-click="save()">Guardar Marcador</button>
+<button class="btn btn-success btn-lg save" ng-click="save()">Guardar Marcador</button>
 
 <div class="list" ng-show="locations.length !== 0">
-	<h4 style="margin: 20px;text-align: center;">Listado de ubicaciones</h4>
+	<h4>Listado de ubicaciones</h4>
 	<table class="table table-hover">
 		<tbody>
 			<tr ng-repeat="location in locations">
-				<td style="line-height: 35px;">{{location.address}}</td>
-				<td style="text-align: right;">		
+				<td>{{location.address}}</td>
+				<td>		
 					<a href="" class="btn text-primary" ng-click="show(location)"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
 					<a href="" class="btn text-danger" ng-click="delete($index)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
 				</td>

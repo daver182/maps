@@ -19,7 +19,7 @@ angular.module('mapsApp').controller('MainCtrl', function ($scope) {
     	options: { scrollwheel: false }
     };
     $scope.marker = {
-    	id: 1,
+    	id: Date.now(),
 		options: { draggable: true },
 		events: { dragend: draggedMarker }
 	};
@@ -43,7 +43,7 @@ angular.module('mapsApp').controller('MainCtrl', function ($scope) {
     		address: $scope.lastLocation.address
     	});
 
-    	$scope.marker = {};
+    	$scope.marker.coords = {};
         $scope.lastLocation = {};
     }
 
@@ -55,10 +55,13 @@ angular.module('mapsApp').controller('MainCtrl', function ($scope) {
     }
 
     $scope.delete = function(index){
-    	$scope.locations.splice(index, 1);
+        if(confirm('¿Está seguro de borrar esta ubicación?')){
+            $scope.locations.splice(index, 1);
+        }
     }
 
     function draggedMarker (marker, eventName, args) {
+        console.log('draggedMarker');
     	var geocoder = new google.maps.Geocoder();
     	var latitude = marker.getPosition().lat();
 		var longitude = marker.getPosition().lng();
