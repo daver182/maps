@@ -1,1 +1,17 @@
-<h1>Main</h1>
+<div id="search" class="search"></div>
+
+<ui-gmap-google-map center="map.center" zoom="map.zoom" options="map.options">
+    <ui-gmap-marker idKey="marker.id" coords="marker.coords" options="marker.options" events="marker.events"></ui-gmap-marker>
+    <ui-gmap-markers models="locations" coords="'self'" icon="'icon'"></ui-gmap-markers>
+    <ui-gmap-search-box options="search.options" template="search.template" events="search.events" parentdiv="search.parent"></ui-gmap-search-box>
+</ui-gmap-google-map>
+
+<button class="btn btn-success save" ng-click="save()">Guardar Marcador</button>
+
+<ul class="list">
+    <li ng-repeat="location in locations">
+        {{location.address}} - {{location.coords.latitude}} / {{location.coords.longitude}}
+        <button class="btn btn-primary" ng-click="show(location)">Ver</button>
+        <button class="btn btn-primary" ng-click="delete($index)">Borrar</button>
+    </li>
+</ul>
