@@ -24,7 +24,6 @@ angular.module('mapsApp', [ 'ngRoute', 'uiGmapgoogle-maps' ]).config(function ($
 				redirectTo: '/'
 			});
 		uiGmapGoogleMapApiProvider.configure({
-			key: 'AIzaSyBOuZ5mjKKatmN6x8zdCQoT8ZXrdYnwCi4',
 			v: '3.17',
 			libraries: 'places'
 		});
