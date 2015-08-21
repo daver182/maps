@@ -43,7 +43,11 @@ angular.module('mapsApp').controller('MainCtrl', function ($scope) {
     		address: $scope.lastLocation.address
     	});
 
-    	$scope.marker.coords = {};
+    	$scope.marker = {
+            id: Date.now(),
+            options: { draggable: true },
+            events: { dragend: draggedMarker }
+        };
         $scope.lastLocation = {};
     }
 
