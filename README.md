@@ -1,12 +1,21 @@
 # maps
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.12.1.
+Este proyecto utiliza la API de Google Maps y permite buscar ubicaciones, agregar un marcador, moverlo sobre el mapa y finalmente agregarlo a una lista, en la cual se puede ver o eliminar el marcador antes creado.
 
-## Build & development
+## Desarrollo
 
-Run `grunt` for building and `grunt serve` for preview.
+La aplicación fue creada con Angularjs, utiliza la bilioteca **angular-google-maps**. El proyecto fue creado utilizando Yeoman y el generator **generator-angular**.
 
-## Testing
+Para ejecutar la aplicación es necesario ejecutar los siguientes comandos:
 
-Running `grunt test` will run the unit tests with karma.
+	npm install
+	bower install
+	
+El primero instala las dependecias ubicadas en el archivo **package.json**, el segundo instala las dependecias del cliente, ubicadas en **bower.json**. Luego se ejecuta la tarea **serve** de Grunt para que se inicialice el servidor que permite visualizar la aplicación:
+
+	grunt serve
+
+Para hacer el **build** y obtener la version minificada y lista para producción se ejecuta:
+
+	grunt build
+
