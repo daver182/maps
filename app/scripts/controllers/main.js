@@ -34,7 +34,7 @@ angular.module('mapsApp').controller('MainCtrl', function ($scope) {
     };
 
     $scope.save = function(){
-    	if(!$scope.lastLocation.coords) return;
+    	if(!$scope.lastLocation || !$scope.lastLocation.coords) { return alert('Debe buscar una ubicación primero'); }
 
     	$scope.locations.push({
     		id: Date.now(),

@@ -1,4 +1,6 @@
-<div id="search" class="search"></div>
+<div id="search" class="search">
+	<h3>Buscar una ubicación</h3>
+</div>
 
 <ui-gmap-google-map center="map.center" zoom="map.zoom" options="map.options">
     <ui-gmap-marker idKey="marker.id" coords="marker.coords" options="marker.options" events="marker.events"></ui-gmap-marker>
@@ -8,10 +10,17 @@
 
 <button class="btn btn-success save" ng-click="save()">Guardar Marcador</button>
 
-<ul class="list">
-    <li ng-repeat="location in locations">
-        {{location.address}} - {{location.coords.latitude}} / {{location.coords.longitude}}
-        <button class="btn btn-primary" ng-click="show(location)">Ver</button>
-        <button class="btn btn-primary" ng-click="delete($index)">Borrar</button>
-    </li>
-</ul>
+<div class="list" ng-show="locations.length !== 0">
+	<h4 style="margin: 20px;text-align: center;">Listado de ubicaciones</h4>
+	<table class="table table-hover">
+		<tbody>
+			<tr ng-repeat="location in locations">
+				<td style="line-height: 35px;">{{location.address}}</td>
+				<td style="text-align: right;">		
+					<a href="" class="btn text-primary" ng-click="show(location)"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+					<a href="" class="btn text-danger" ng-click="delete($index)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
