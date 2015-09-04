@@ -92,12 +92,13 @@ angular.module('mapsApp').controller('MainCtrl', function ($scope) {
 
 	function placeChanged (autocomplete) {
 		var location = autocomplete.getPlace().geometry.location;
+        console.log(location);
 
 		if(!location) return;
 
 		var coords = {
-			latitude: location.k,
-			longitude: location.D
+			latitude: location.A,
+			longitude: location.F
 		}
 
 		$scope.map.center = coords;
